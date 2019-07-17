@@ -32,3 +32,14 @@ m.name = 'Joe'
 print('Hello ' + m.name)
 # Hello Joe
 ```
+6. **Hyperparameter tuning**
+Use [hyperopt](https://medium.com/district-data-labs/parameter-tuning-with-hyperopt-faa86acdfdce) for hyperparameter tuning. Here's a motivating example:
+```python
+from hyperopt import fmin, tpe, hp
+best = fmin(
+    fn=lambda x: x,
+    space=hp.uniform('x', 0, 1),
+    algo=tpe.suggest,
+    max_evals=100)
+print best
+```
