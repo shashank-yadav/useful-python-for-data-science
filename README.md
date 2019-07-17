@@ -32,8 +32,8 @@ m.name = 'Joe'
 print('Hello ' + m.name)
 # Hello Joe
 ```
-6. **Hyperparameter tuning**
-Use [hyperopt](https://medium.com/district-data-labs/parameter-tuning-with-hyperopt-faa86acdfdce) for hyperparameter tuning. Here's a motivating example:
+6. **Hyperparameter Tuning**  
+Use [hyperopt](https://medium.com/district-data-labs/parameter-tuning-with-hyperopt-faa86acdfdce) for hyperparameter tuning. Here's a motivating example:  
 ```python
 from hyperopt import fmin, tpe, hp
 best = fmin(
