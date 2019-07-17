@@ -43,3 +43,21 @@ best = fmin(
     max_evals=100)
 print best
 ```
+A slightly more general example:  
+```python
+from hyperopt import fmin, tpe, hp, STATUS_OK, Trials
+
+space = {
+    'x': hp.uniform('x', 0, 1),
+    'y': hp.uniform('y', 0, 1)
+}
+
+def score(params):
+    x = params['x']
+    y = params['y']
+    return {'loss': (0.5 - x*y)**2, 'status': STATUS_OK }
+
+trials = Trials()
+best = fmin(score, space, algo=tpe.suggest, trials=trials, max_evals=100)
+print(best['x'], best['y'])
+```
